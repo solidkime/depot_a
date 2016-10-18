@@ -51,4 +51,14 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to products_url
   end
+
+    test "should get products" do
+    get products_url
+    assert_response :success
+    assert_select 'title', 'Pragprog Books Online Store'
+    assert_select '.list_actions a', :minimum => 3
+    assert_select '.products .list_description dl dd', 'MyText'
+  end
 end
+
+
