@@ -57,7 +57,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select 'title', 'Pragprog Books Online Store'
     assert_select '.list_actions a', :minimum => 3
-    assert_select '.products .list_description', 'MyText'
+    assert_select '.products .list_description dl dd', 'MyText'
   end
 
   test "can't delete product in cart" do
