@@ -20,7 +20,7 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
       post line_items_url, params: { product_id: products(:ruby).id } #{ line_item: { cart_id: @line_item.cart_id, product_id: @line_item.product_id } }
     end
 
-    follow_redirect!
+    follow_redirect!  
 
     assert_select 'h2', 'Your Pragmatic Cart'
     assert_select 'li', 'Programming Ruby 1.9'
